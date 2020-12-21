@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap core CSS -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../static/js/User/main.js" th:src="@{/js/User/main.js}"></script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- START SIGMA IMPORTS -->
+    <script th:src="@{/js/sigma/sigma.core.js}"></script>
+    <script th:src="@{/js/sigma/conrad.js}"></script>
+    <script th:src="@{/js/sigma/utils/sigma.utils.js}"></script>
+    <script th:src="@{/js/sigma/utils/sigma.polyfills.js}"></script>
+    <script th:src="@{/js/sigma/sigma.settings.js}"></script>
+    <script th:src="@{/js/sigma/classes/sigma.classes.dispatcher.js}"></script>
+    <script th:src="@{/js/sigma/classes/sigma.classes.configurable.js}"></script>
+    <script th:src="@{/js/sigma/classes/sigma.classes.graph.js}"></script>
+    <script th:src="@{/js/sigma/classes/sigma.classes.camera.js}"></script>
+    <script th:src="@{/js/sigma/classes/sigma.classes.quad.js}"></script>
+    <script th:src="@{/js/sigma/classes/sigma.classes.edgequad.js}"></script>
+    <script th:src="@{/js/sigma/captors/sigma.captors.mouse.js}"></script>
+    <script th:src="@{/js/sigma/captors/sigma.captors.touch.js}"></script>
+    <script th:src="@{/js/sigma/renderers/sigma.renderers.canvas.js}"></script>
+    <script th:src="@{/js/sigma/renderers/sigma.renderers.webgl.js}"></script>
+    <script th:src="@{/js/sigma/renderers/sigma.renderers.svg.js}"></script>
+    <script th:src="@{/js/sigma/renderers/sigma.renderers.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/webgl/sigma.webgl.nodes.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/webgl/sigma.webgl.nodes.fast.js}"></script>
+    <script th:src="@{/js/sigma/renderers/webgl/sigma.webgl.edges.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/webgl/sigma.webgl.edges.fast.js}"></script>
+    <script th:src="@{/js/sigma/renderers/webgl/sigma.webgl.edges.arrow.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.labels.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.hovers.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.nodes.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edges.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edges.curve.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edges.arrow.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edges.curvedArrow.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edgehovers.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edgehovers.curve.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edgehovers.arrow.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js}"></script>
+    <script th:src="@{/js/sigma/renderers/canvas/sigma.canvas.extremities.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/svg/sigma.svg.utils.js}"></script>
+    <script th:src="@{/js/sigma/renderers/svg/sigma.svg.nodes.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/svg/sigma.svg.edges.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/svg/sigma.svg.edges.curve.js}"></script>
+    <script th:src="@{/js/sigma/renderers/svg/sigma.svg.labels.def.js}"></script>
+    <script th:src="@{/js/sigma/renderers/svg/sigma.svg.hovers.def.js}"></script>
+    <script th:src="@{/js/sigma/middlewares/sigma.middlewares.rescale.js}"></script>
+    <script th:src="@{/js/sigma/middlewares/sigma.middlewares.copy.js}"></script>
+    <script th:src="@{/js/sigma/misc/sigma.misc.animation.js}"></script>
+    <script th:src="@{/js/sigma/misc/sigma.misc.bindEvents.js}"></script>
+    <script th:src="@{/js/sigma/misc/sigma.misc.bindDOMEvents.js}"></script>
+    <script th:src="@{/js/sigma/misc/sigma.misc.drawHovers.js}"></script>
+    <!-- END SIGMA IMPORTS -->
+    <script src="../../static/js/sigma/plugins/sigma.plugins.dragNodes.js" th:src="@{/js/sigma/plugins/sigma.plugins.dragNodes.js}"></script>
+    <script src="../../static/js/sigma/plugins/curvedArrow.js" th:src="@{/js/sigma/plugins/curvedArrow.js}"></script>
+    <script src="../../static/js/sigma/plugins/labels.curve.js" th:src="@{/js/sigma/plugins/labels.curve.js}"></script>
+    <script src="../../static/js/sigma/plugins/labels.def.js" th:src="@{/js/sigma/plugins/labels.def.js}"></script>
+    <script src="../../static/js/sigma/plugins/settings.js" th:src="@{/js/sigma/plugins/settings.js}"></script>
+    <script src="../../static/js/sigma/plugins/shape-library.js" th:src="@{/js/sigma/plugins/shape-library.js}"></script>
+    <script src="../../static/js/sigma/plugins/sigma.renderers.customShapes.js" th:src="@{/js/sigma/plugins/sigma.renderers.customShapes.js}"></script>
+
+    <link  href="../../static/css/User/style.css" th:href="@{/css/User/style.css}" rel="stylesheet">
+    <style>
+
+    </style>
+
+</head>
+<body class="bg">
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2 th:text="${user?.username}"></h2>
+        </div>
+
+        <ul class="list-unstyled components border-0">
+            <li>
+                <h5><a id="" th:href="@{/User/userIndex}">Inicio</a></h5>
+            </li>
+            <li>
+                <h5><a id="ShowProjects" href="#">Show Projects</a></h5>
+            </li>
+            <li>
+                <h5><a  th:href="@{/logout}" th:text="'Log out '+${user?.username}"></a></h5>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div th:replace="/fragments/userInterface :: UserHeader"></div>
+        <div id="mainContent" class="container">
+            <form method="post" enctype="multipart/form-data" th:action="@{/User/userIndex}">
+                <div class="form-group row">
+                    <label class="col-form-label" for="projectName">Nombre del proyecyo</label>
+                    <div class="col">
+                        <input type="text" name="projectName" id="projectName" class="form-control">
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label  for="description">Informacion del proyecto</label>
+                    <textarea id="description" class="form-control" name="projectDescription" rows="2"></textarea>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <div class="file-loading">
+                            <input id="inputFile" type="file" accept=".xlsx" name="file">
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-lg btn-danger btn-block border-0" style=""  name="Submit" value="Subir" type="Submit" th:text="Subir"></button>
+                        <p th:text="${UploadMessage}"</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
